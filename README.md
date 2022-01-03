@@ -12,3 +12,13 @@ This repository describes how to implement Microsoft [Information Barriers](http
 
 
 👉 Here my article about Information Barriers ([_italian_](https://github.com/mariocuomo/informationBarriers/blob/main/articles/report%20tesina.pdf) or [_english_](https://github.com/mariocuomo/informationBarriers/blob/main/articles/report%20tesina.pdf) version) 
+
+---
+
+<div align="center">
+  proposed by @Avanade for cybersecurity course at Roma Tre University 2021-2022<br><br>
+  
+  
+  <img src="https://github.com/mariocuomo/informationBarriers/blob/main/images/avanade.png" width=300>
+  <img src="https://github.com/mariocuomo/informationBarriers/blob/main/images/romatre.jpg" width=350>
+</div>
