@@ -11,4 +11,4 @@ This repository describes how to implement Microsoft [Information Barriers](http
 [_source_]()
 
 
-👇 Here my article about Information Barriers
+👉 Here my article about Information Barriers ([_italian_](https://github.com/mariocuomo/informationBarriers/blob/main/articles/report%20tesina.pdf) or [_english_](https://github.com/mariocuomo/informationBarriers/blob/main/articles/report%20tesina.pdf) version) 
