@@ -1,29 +1,16 @@
-# Information Barriers
-This repository describes how to implement Microsoft [Information Barriers](https://docs.microsoft.com/en-us/microsoft-365/compliance/information-barriers) to protect your data's organization - especially in _Microsoft Teams_.
+# SCENARIO
+Consider being the IT administrator of a university.<br>
+These are the departments
 
 <div align="center">  
-  <img src="https://github.com/mariocuomo/informationBarriers/blob/main/images/ib.png" width=400>
+  <img src="https://github.com/mariocuomo/informationBarriers/blob/main/images/departments.png" width=300>
 </div>
 
-**3 USE CASES**
-- [ ] An internal group that is prevented from communicating or sharing data with another specific internal team<br>
-[_source_]()
-- [ ] An internal group user must not communicate or share data with anyone outside the team itself<br>
-[_source_]()
-- [ ] User segmentation using extended user features in Azure Active Directory<br>
-[_source_]()
+Imagine that for compliance reasons you need to implement the following _policies_ at different times:
 
-
-👉 Here my article about Information Barriers ([_italian_](https://github.com/mariocuomo/informationBarriers/blob/main/articles/report%20tesina.pdf) or [_english_](https://github.com/mariocuomo/informationBarriers/blob/main/articles/report%20tesina.pdf) version) 
-
----
-
-<div align="center">
-  
-  `
-  proposed by @Avanade for cybersecurity course at Roma Tre University 2021-2022
-  `
-  
-  <img src="https://github.com/mariocuomo/informationBarriers/blob/main/images/avanade.png" width=300>
-  <img src="https://github.com/mariocuomo/informationBarriers/blob/main/images/romatre.jpg" width=350>
-</div>
+- [ ] The departments of _literature_ and _engineering_ cannot communicate directly with the _administration_<br>
+[use case 1]()
+- [ ] The _treasury_ department cannot communicate externally<br>
+[use case 2]()
+- [ ] Chosen _elite_ students you want to isolate them to work on a secret project<br>
+[use case 3]()
