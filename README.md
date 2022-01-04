@@ -1,6 +1,9 @@
 # Information Barriers
 This repository describes how to implement Microsoft [Information Barriers](https://docs.microsoft.com/en-us/microsoft-365/compliance/information-barriers) to protect your data's organization - especially in _Microsoft Teams_.
 
+<div align="center">  
+  <img src="https://github.com/mariocuomo/informationBarriers/blob/main/images/ib.png" width=400>
+</div>
 
 **3 USE CASES**
 - [ ] An internal group that is prevented from communicating or sharing data with another specific internal team<br>
@@ -16,8 +19,10 @@ This repository describes how to implement Microsoft [Information Barriers](http
 ---
 
 <div align="center">
-  proposed by @Avanade for cybersecurity course at Roma Tre University 2021-2022<br><br>
   
+  `
+  proposed by @Avanade for cybersecurity course at Roma Tre University 2021-2022
+  `
   
   <img src="https://github.com/mariocuomo/informationBarriers/blob/main/images/avanade.png" width=300>
   <img src="https://github.com/mariocuomo/informationBarriers/blob/main/images/romatre.jpg" width=350>
