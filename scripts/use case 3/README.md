@@ -1,29 +1,57 @@
-# Information Barriers
-This repository describes how to implement Microsoft [Information Barriers](https://docs.microsoft.com/en-us/microsoft-365/compliance/information-barriers) to protect your data's organization - especially in _Microsoft Teams_.
+# Use case 3
+User segmentation using extended user features in Azure Active Directory.
+
+Chosen elite students you want to isolate them to work on a secret project.
 
 <div align="center">  
-  <img src="https://github.com/mariocuomo/informationBarriers/blob/main/images/ib.png" width=400>
+  <img src="https://github.com/mariocuomo/informationBarriers/blob/main/images/usecase3.png" width=300>
 </div>
 
-**3 USE CASES**
-- [ ] An internal group that is prevented from communicating or sharing data with another specific internal team<br>
-[_source_]()
-- [ ] An internal group user must not communicate or share data with anyone outside the team itself<br>
-[_source_]()
-- [ ] User segmentation using extended user features in Azure Active Directory<br>
-[_source_]()
+#### STEP 1 - ACCEPT INFORMATION BARRIERS PROCESSOR
+
+```PowerShell
+Connect-AzureAD -Tenant cybermario.onmicrosoft.com
+$appId="bcf62038-e005-436d-b970-2a472f8c1982" 
+$sp=Get-AzureADServicePrincipal -Filter "appid eq '$($appid)'"
+if ($sp -eq $null) { New-AzureADServicePrincipal -AppId $appId }
+Start-Process "https://login.microsoftonline.com/common/adminconsent?client_id=$appId"
+```
+
+#### STEP 2 - CONNECTION TO COMPLIANCE & SECURITY CENTER
+
+```PowerShell
+Connect-IPPSSession -UserPrincipalName mariocuomo@cybermario.onmicrosoft.com
+```
+
+#### STEP 3 - ADD CUSTOM ATTRIBUTES TO USERS
+
+```PowerShell
+Set-Mailbox -Identity mariocuomo@cybermario.onmicrosoft.com -CustomAttribute1 Elite
+```
+
+#### STEP 4 - CREATION OF SEGMENTS
+```PowerShell
+New-OrganizationSegment -Name "Elite" -UserGroupFilter "CustomAttribute1 -eq 'Elite'"
+New-OrganizationSegment -Name "Other" -UserGroupFilter "CustomAttribute1 -ne 'Elite'"
+```
+
+#### STEP 5a - CREATION OF POLICY
+
+```PowerShell
+New-InformationBarrierPolicy -Name "Elite-to-Elite" -AssignedSegment "Elite" -SegmentsAllowed "Elite" -State Inactive
+New-InformationBarrierPolicy -Name "Other-Elite" -AssignedSegment "Other" -SegmentsBlocked "Elite" -State Inactive
+```
+
+#### STEP 5 - SET STATE OF POLICY AS ACTIVE
+
+```PowerShell
+Set-InformationBarrierPolicy -Identity "Elite-to-Elite" -State Active
+Set-InformationBarrierPolicy -Identity "Other-Elite" -State Active
+```
 
 
-👉 Here my article about Information Barriers ([_italian_](https://github.com/mariocuomo/informationBarriers/blob/main/articles/report%20tesina.pdf) or [_english_](https://github.com/mariocuomo/informationBarriers/blob/main/articles/report%20tesina.pdf) version) 
+#### STEP 6 - APPLY POLICIES
 
----
-
-<div align="center">
-  
-  `
-  proposed by @Avanade for cybersecurity course at Roma Tre University 2021-2022
-  `
-  
-  <img src="https://github.com/mariocuomo/informationBarriers/blob/main/images/avanade.png" width=300>
-  <img src="https://github.com/mariocuomo/informationBarriers/blob/main/images/romatre.jpg" width=350>
-</div>
+```PowerShell
+Start-InformationBarrierPoliciesApplication
+```

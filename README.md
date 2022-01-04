@@ -7,11 +7,11 @@ This repository describes how to implement Microsoft [Information Barriers](http
 
 **3 USE CASES**
 - [ ] An internal group that is prevented from communicating or sharing data with another specific internal team<br>
-[_source_]()
+[_source_](https://github.com/mariocuomo/informationBarriers/tree/main/scripts/use%20case%201)
 - [ ] An internal group user must not communicate or share data with anyone outside the team itself<br>
-[_source_]()
+[_source_](https://github.com/mariocuomo/informationBarriers/tree/main/scripts/use%20case%202)
 - [ ] User segmentation using extended user features in Azure Active Directory<br>
-[_source_]()
+[_source_](https://github.com/mariocuomo/informationBarriers/tree/main/scripts/use%20case%203)
 
 
 👉 Here my article about Information Barriers ([_italian_](https://github.com/mariocuomo/informationBarriers/blob/main/articles/report%20tesina.pdf) or [_english_](https://github.com/mariocuomo/informationBarriers/blob/main/articles/report%20tesina.pdf) version) 
