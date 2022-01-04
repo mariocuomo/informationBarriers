@@ -3,7 +3,7 @@ Consider being the IT administrator of a university.<br>
 These are the departments
 
 <div align="center">  
-  <img src="https://github.com/mariocuomo/informationBarriers/blob/main/images/departments.png" width=300>
+  <img src="https://github.com/mariocuomo/informationBarriers/blob/main/images/departments.png" width=400>
 </div>
 
 Imagine that for compliance reasons you need to implement the following _policies_ at different times:
