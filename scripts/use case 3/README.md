@@ -23,40 +23,30 @@ Start-Process "https://login.microsoftonline.com/common/adminconsent?client_id=$
 Connect-IPPSSession -UserPrincipalName mariocuomo@cybermario.onmicrosoft.com
 ```
 
-#### STEP 3 - CREATION OF SEGMENTS
+#### STEP 3 - ADD CUSTOM ATTRIBUTES TO USERS
 
 ```PowerShell
-New-OrganizationSegment -Name "Engineering" -UserGroupFilter "Department -eq 'Engineering'"
-New-OrganizationSegment -Name "Literature" -UserGroupFilter "Department -eq 'Literature'"
-New-OrganizationSegment -Name "Administration" -UserGroupFilter "Department -eq 'Administration'"
-New-OrganizationSegment -Name "FrontOffice" -UserGroupFilter "Department -eq 'Front Office'"
-New-OrganizationSegment -Name "Treasury" -UserGroupFilter "Department -eq 'Treasury'"
+Set-Mailbox -Identity mariocuomo@cybermario.onmicrosoft.com -CustomAttribute1 Elite
 ```
 
-#### STEP 4a - CREATION OF POLICY FOR TREASURY
-
+#### STEP 4 - CREATION OF SEGMENTS
 ```PowerShell
-New-InformationBarrierPolicy -Name "Treasury-to-Treasury" -AssignedSegment "Treasury" -SegmentsAllowed "Treasury" -State Inactive
-# or New-InformationBarrierPolicy -Name "Treasury-to-Treasury" -AssignedSegment "Treasury" -SegmentsBlocked "Engineering","Literature","Administration","FrontOffice" -State Inactive
+New-OrganizationSegment -Name "Elite" -UserGroupFilter "CustomAttribute1 -eq 'Elite'"
+New-OrganizationSegment -Name "Other" -UserGroupFilter "CustomAttribute1 -ne 'Elite'"
 ```
 
-#### STEP 4b - CREATION OF POLICY FOR OTHER SEGMENTS
+#### STEP 5a - CREATION OF POLICY
 
 ```PowerShell
-New-InformationBarrierPolicy -Name "Engineering-Treasury" -AssignedSegment "Engineering" -SegmentsBlocked "Treasury" -State Inactive
-New-InformationBarrierPolicy -Name "Literature-Treasury" -AssignedSegment "Litetarute" -SegmentsBlocked "Treasury" -State Inactive
-New-InformationBarrierPolicy -Name "Administration-Treasury" -AssignedSegment "Administration" -SegmentsBlocked "Treasury" -State Inactive
-New-InformationBarrierPolicy -Name "FrontOffice-Treasury" -AssignedSegment "FrontOffice" -SegmentsBlocked "Treasury" -State Inactive
+New-InformationBarrierPolicy -Name "Elite-to-Elite" -AssignedSegment "Elite" -SegmentsAllowed "Elite" -State Inactive
+New-InformationBarrierPolicy -Name "Other-Elite" -AssignedSegment "Other" -SegmentsBlocked "Elite" -State Inactive
 ```
 
 #### STEP 5 - SET STATE OF POLICY AS ACTIVE
 
 ```PowerShell
-Set-InformationBarrierPolicy -Identity "Treasury-to-Treasury" -State Active
-Set-InformationBarrierPolicy -Identity "Engineering-Treasury" -State Active
-Set-InformationBarrierPolicy -Identity "Literature-Treasury" -State Active
-Set-InformationBarrierPolicy -Identity "Administration-Treasury" -State Active
-Set-InformationBarrierPolicy -Identity "FrontOffice-Treasury" -State Active
+Set-InformationBarrierPolicy -Identity "Elite-to-Elite" -State Active
+Set-InformationBarrierPolicy -Identity "Other-Elite" -State Active
 ```
 
 
