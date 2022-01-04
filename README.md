@@ -14,7 +14,7 @@ This repository describes how to implement Microsoft [Information Barriers](http
 [_source_](https://github.com/mariocuomo/informationBarriers/tree/main/scripts/use%20case%203)
 
 
-👉 Here my article about Information Barriers ([_italian_](https://github.com/mariocuomo/informationBarriers/blob/main/articles/report%20tesina.pdf) or [_english_](https://github.com/mariocuomo/informationBarriers/blob/main/articles/tesina.pdf) version) 
+👉 Here my article about Information Barriers ([_italian_](https://github.com/mariocuomo/informationBarriers/blob/main/images/waiting.png) or [_english_](https://github.com/mariocuomo/informationBarriers/blob/main/images/waiting.png) version) 
 
 ---
 
