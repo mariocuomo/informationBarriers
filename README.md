@@ -1,5 +1,5 @@
-# Information Barriers
-This repository describes how to implement Microsoft [Information Barriers](https://docs.microsoft.com/en-us/microsoft-365/compliance/information-barriers) to protect your data's organization - especially in _Microsoft Teams_.
+# Microsoft Information Barriers
+This repository describes how to implement [Microsoft Information Barriers](https://docs.microsoft.com/en-us/microsoft-365/compliance/information-barriers) to protect your data's organization - especially in _Microsoft Teams_.
 
 <div align="center">  
   <img src="https://github.com/mariocuomo/informationBarriers/blob/main/images/ib.png" width=400>
@@ -15,6 +15,11 @@ This repository describes how to implement Microsoft [Information Barriers](http
 
 
 👉 Here my article about Information Barriers ([_italian_](https://github.com/mariocuomo/informationBarriers/tree/main/tesinaIT.pdf) or _english_ version) 
+
+<div align="center">
+  <h3>TAGCLOUD</h3>
+  <img src="https://github.com/mariocuomo/informationBarriers/blob/main/images/tagcloud.png" width=800>
+</div>
 
 ---
 
